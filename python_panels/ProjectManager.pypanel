@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <interface name="project_manager" label="Project Manager" icon="MISC_python" help_url="">
+    <script><![CDATA[
+import sys
+import importlib
+from HoudiniProjectManager import app
+
+# Recursive Reload Logic
+# This usage pattern is perfectly safe for a Panel that is intended to be reloaded frequently during dev.
+def reload_package(package):
+    import os
+    import types
+    prefix = package.__name__ + "."
+    
+    # Reload submodules first
+    for name, module in list(sys.modules.items()):
+        if name == package.__name__ or name.startswith(prefix):
+             try:
+                 importlib.reload(module)
+             except Exception:
+                 pass
+
+# Force reload on panel creation
+reload_package(app)
+
+def createInterface():
+    # Re-import after reload to get fresh class
+    from HoudiniProjectManager import app
+    return app.ProjectManager()
+]]></script>
+    <includeInPaneTabMenu menu_position="100" create_separator="false"/>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>

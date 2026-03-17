@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs
+.vscode/
+.idea/
+.claude/
+ingore_side/
+
+# Local/User Data
+user_data/
+preferences/
+
+# Houdini
+backup/
+*.hip#
+*.hipnc#
+*.hiplc#
+*.lock

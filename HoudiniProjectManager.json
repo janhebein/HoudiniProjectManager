@@ -1,0 +1,10 @@
+{
+    "env": [
+        {
+            "HPM_LOCATION": "$HOUDINI_USER_PREF_DIR/HoudiniProjectManager"
+        }
+    ],
+    "path": [
+        "$HPM_LOCATION"
+    ]
+}

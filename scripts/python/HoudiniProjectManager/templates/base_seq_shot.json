@@ -1,0 +1,55 @@
+{
+    "name": "Base - Seq & Shot",
+    "description": "Project with sequence/shot structure. Hip files live in shot folder.",
+    "root_path": "{root}/{project_name}",
+    "variables": {
+        "JOB": "{root}/{project_name}"
+    },
+    "structure": {
+        "type": "directory",
+        "name": ".",
+        "children": [
+            {
+                "type": "directory",
+                "name": "seq010",
+                "children": [
+                    {
+                        "type": "directory",
+                        "name": "shot010",
+                        "is_work_area": true,
+                        "children": [
+                            {
+                                "type": "directory",
+                                "name": "geo"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "render"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "sim"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "cache"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "tex"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "comp"
+                            },
+                            {
+                                "type": "directory",
+                                "name": "playback"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
